@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        img {
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            height:70%;
+            transition: all 1.5s;
+        }
+        #img2 {
+            opacity:0;
+            filter: blur(40px);
+            z-index: -1;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <img id="img1" src="img1.png">
+    <img id="img2"  src="img2.png">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+
+    <script>
+        $("#img1").click(function(){
+            console.log("what");
+            $("#img2").css("opacity",1);
+            $("#img2").css("filter","blur(0px)");
+            $("#img1").css("filter","blur(40px)");
+            $("#img1").css("opacity",0);
+            $("#img2").css("z-index",-1);
+            $("#img1").css("z-index",-2);
+        }); 
+        $("#img2").click(function(){
+            console.log("what");
+            $("#img1").css("opacity",1);
+            $("#img1").css("filter","blur(0px)");
+            $("#img2").css("filter","blur(40px)");
+            $("#img2").css("opacity",0);
+            $("#img1").css("z-index",-1);
+            $("#img2").css("z-index",-2);
+        }); 
+    </script>
+</body>
+
+</html>
+
+
